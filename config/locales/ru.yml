@@ -1,0 +1,110 @@
+ru:
+  sector:
+    id_1:
+      name: физическое развитие
+      description: 'Развитие физического тела, оздоровление, боевые искусства'
+    id_2:
+      name: интеллект
+      description: 'Развитие интеллектуальных способностей, эрудированность'
+    id_3:
+      name: селекция восприятий
+      description: 'Работа по порождению ОзВ, ОФ, ОзО, ОзУ, и устранению НЭ, НФ, НФО, НУ'
+    id_4:
+      name: финансовая база
+      description: 'Доступ к разнообразным впечатлениям и комфорту, защищенности, независимость, способность давать'
+    id_5:
+      name: близкие
+      description: 'Формирование круга интересных/близких людей в ближней и дальней перспективах'
+    id_6:
+      name: впечатления
+      description: 'Впечатления, удовольствия – секс, путешествия, кино, книги, музыка, общение и т.д.'
+    id_7:
+      name: творч-во/исслед-я
+      description: 'Создание или исследование чего-то нового'
+    id_8:
+      name: развитие навыков
+      description: 'Создание и поддержка навыков (например совершенствование своих умений в дайвинге, боксе, владения языками, науками и т.д. и т.п.)'
+
+  languages:
+    lang: Язык
+    ru: Русский
+    en: Английский
+
+  links:
+    home: Заглавная
+    patina: Патина
+    print: Печатать
+    statistics: Статистика
+    about: Что это?
+    instruction: Как пользоваться?
+    feedback: Обратная связь
+    hello: Привет
+    vk_group: Группа ВК
+
+  layouts:
+    navbar:
+      edit_profile: Профиль
+      logout: Выйти
+      login: Войти
+    footer:
+      sign: Запущен 9 Мая 2015 © aytigra
+
+  pages:
+    statistics:
+      fragments_by_sectors: Количество твоих фрагментов по МН
+      sectors: МН
+      fragments: Фрагов
+      by_month: За месяц
+      by_epoch: За 100 дней(14 нед.)
+      by_all: За все время
+      total: Всего
+      popular_sectors: Популярные МН
+      users_count: Пользователей
+
+    statistics_sector:
+      fragments_by_sector: "Количество твоих фрагментов в МН '%{sector}'"
+      activities: КН
+      fragments: Фрагов
+      by_month: За месяц
+      by_epoch: За 100 дней(14 нед.)
+      by_all: За все время
+      go_back: Назад
+
+  users:
+    email: Эл. почта
+    password: Пароль
+    password2: Повтор пароля
+    pass_length: (%{length} знаков минимум)
+    shared:
+      links:
+        login: Войти
+        signup: Регистрация
+        forgot_pass: Восстановление пароля
+        forgot_pass_send: Отправить инструкцию по сбросу пароля
+        miss_confirm_letter: Повторно отправить письмо подтверждения эл. почты
+        miss_unlock_letter: Повторно отправить инструкцию для разблокирования
+        signin_omniauth: Войти через %{provider}
+    sessions:
+      form:
+        remember: запомнить меня
+    registrations:
+      edit:
+        title: Редактировать профиль
+        pending_confirmation: "Ожидается подтверждение эл. почты: %{email}"
+        leave_blank: "|(Оставь поле пустым если не хочешь поменять пароль)"
+        need_pass: "|(Нужен текущий пароль чтобы подтвердить изменения)"
+        update: Изменить
+        back: Назад
+        delete: Удалить профиль
+        delete_desc: Будет удален профиль и вся связанная с ним информация
+        delete_confirm: DANGER, будет удалена вся информация
+    passwords:
+      edit:
+        title: Изменение пароля
+        new_pass: Новый пароль
+        confirm_pass: Повтор пароля
+        change: Изменить
+    confirmations:
+      new:
+        title: Повторно отправить письмо подтверждения эл. почты
+        send: Отправить

@@ -1,0 +1,387 @@
+// Place all the styles related to the Weeks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.toolbar {
+  position: relative;
+  .btn {
+    border: none;
+    background-color: inherit;
+  }
+  .btns-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .btns-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.tooltip-inner {
+  white-space:pre-wrap;
+  max-width:400px;
+  text-align: left;
+}
+
+.navbar-default {
+  margin-bottom: 0;
+}
+
+#week-content {
+  padding-top: 34px;
+}
+
+.sticky-nav {
+  z-index: 100;
+  position: absolute;
+  left: 0;
+  top: 52px;
+  height: 34px;
+  width: 100%;
+}
+
+#week-header{
+  height: 34px;
+
+  .week-navbar {
+    @extend .toolbar;
+    display: inline-block;
+    .week-info {
+      line-height: 32px;
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+
+  }
+}
+
+.sector-list {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+  .sector {
+    margin-top: 5px;
+    margin-left: -10px;
+    margin-right: -15px;
+    border: solid white 2px;
+    position: relative;
+    min-height: 55px;
+  }
+    .sector-icon {
+      position: absolute;
+      left: 0;
+      top: 10px;
+      max-width: 55px;
+      padding-left: 2px;
+      div {
+        display: inline-block;
+        font-size: 22px;
+        width: 22px;
+        overflow: hidden;
+      }
+    }
+    .sector-icon-editing {
+      @extend .sector-icon;
+      border: 1px dashed black ;
+    }
+    .sector-full {
+      margin-left: 30px;
+      background-color: #fff;
+    }
+    .current-sector {
+      border-color: #5F5F5F;
+    }
+    .sector-header {
+      line-height: 18px;
+      padding-left: 5px;
+      padding-bottom: 2px;
+      .btns-left span {
+        margin-right: 5px;
+      }
+      .sector-name {
+        font-size: 20px;
+        font-weight: normal;
+      }
+    }
+    .sector-graph {
+      height: 50px;
+    }
+
+
+.sector-content {
+  margin-top: -7px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+
+  div.row {
+    margin-left: -5px;
+    margin-right: -10px;
+  }
+
+  .errors_block {
+    clear: both;
+    .errors_block_title {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .errors_block_body {
+
+    }
+  }
+
+}
+
+.sector-statistics {
+  margin-top: 7px;
+  padding-left: 10px;
+  padding-right: 10px;
+  .stats-title {
+    padding-left: 20px;
+  }
+}
+
+.activity, .subsector {
+  .list-name {
+    @extend .toolbar;
+    label {
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 28px;
+      background-color: inherit;
+      margin-bottom: 0px;
+      padding-left: 4px;
+      word-break: break-word;
+      width: 100%;
+    }
+  }
+  .list-description {
+    clear: both;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+
+.activity {
+  background-color: #F5F5F5;
+  margin-top: 7px;
+  .list-name {
+    padding-left: 64px;
+    padding-right: 32px;
+    .btn-count {
+      padding: 5px;
+      min-width: 30px;
+      background-color: #EDEDED;
+    }
+    .btn-add-count {
+      background-color: #EDEDED;
+    }
+    .btn-count:hover, .btn-add-count:hover {
+      background-color: #DDDDDD;;
+    }
+  }
+}
+
+.subsector {
+  margin-top: 14px;
+  .list-name {
+    padding-right: 64px;
+  }
+}
+
+  .activity-form, .activity-count-form, .subsector-form, .sector-form {
+    .list-form-head {
+      @extend .toolbar;
+      padding-left: 32px;
+      padding-right: 64px;
+      input {
+        width: 100%;
+        padding: 0;
+        padding-left: 4px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 27px;
+        border-bottom: 1px solid gray;
+        background-color: inherit;
+      }
+
+    }
+    .list-form-body {
+      @extend .toolbar;
+      padding-left: 5px;
+      padding-right: 32px;
+      textarea {
+        width: 100%;
+        min-height: 84px;
+        padding: 0, 4px, 0, 4px;
+        resize: vertical;
+        overflow: hidden;
+        border: none;
+        outline: none;
+        background-color: inherit;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 20px;
+      }
+      .btns-right {
+        width: 32px;
+      }
+    }
+  }
+  .activity-count-form {
+    .list-form-head {
+      padding-left: 2px;
+    }
+      .count-inputs {
+        width: 100%;
+        display: inline-block;
+        input, label {
+          width: 30px;
+          display: inline-block;
+          text-align: center;
+          padding-left: 0;
+          font-size: 14px;
+          line-height: 27px;
+          margin-bottom: 0px;
+        }
+        .count-name {
+          padding-left: 15px;
+          font-weight: normal;
+        }
+      }
+  }
+
+  .sector-form {
+    .list-form-head {
+      padding-left: 2px;
+      input {
+        line-height: 18px;
+        font-size: 20px;
+        font-weight: normal;
+      }
+    }
+      .list-form-body {
+        padding-right: 40px;
+        .btns-left {
+          top: 50px;
+          left: -37px;
+          width: 32px;
+        }
+      }
+  }
+
+.subsector-add {
+  margin-top: 10px;
+  text-align: center;
+  button {
+    text-align: center;
+    border: none;
+  }
+}
+
+//selector modal
+.selector-sector {
+  margin-bottom: 5px;
+  margin-top: 15px;
+  padding-left: 20px;
+  padding-right: 10px;
+  line-height: 28px;
+  font-size: 18px;
+}
+
+.selector-susector {
+  margin-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 5px;
+  line-height: 26px;
+  font-size: 16px;
+}
+
+.selector-clickable {
+  cursor: pointer;
+}
+
+.selector-emoji {
+  font-size: 22px;
+  margin-right: 5px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+// enlarge buttons on touch screens
+@media (max-width: $screen-sm-max) {
+  .btn-sm {
+    @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $btn-border-radius-base);
+  }
+  .activity, .subsector {
+    .list-name label {
+        line-height: 32px;
+    }
+  }
+  .activity .list-name {
+    padding-left: 76px;
+    padding-right: 38px;
+    .btn-count {
+      padding: 6px;
+      min-width: 34px;
+    }
+  }
+  .subsector  .list-name {
+    padding-right: 76px;
+  }
+
+  .sector-header {
+    line-height: 22px;
+  }
+
+  .activity-form, .activity-count-form, .subsector-form, .sector-form {
+    .list-form-head {
+      padding-left: 38px;
+      padding-right: 76px;
+      input {
+        line-height: 33px;
+      }
+
+    }
+    .list-form-body {
+      padding-right: 38px;
+      textarea {
+        min-height: 96px;
+        line-height: 20px;
+      }
+      .btns-right {
+        width: 38px;
+      }
+    }
+  }
+
+  .activity-count-form {
+    .list-form-head {
+      padding-left: 2px;
+    }
+    .count-inputs {
+      input, label {
+        width: 38px;
+        line-height: 32px;
+      }
+      .count-name {
+        padding-left: 15px;
+      }
+    }
+  }
+
+  .sector-form .list-form-body {
+    .btns-left {
+      top: 50px;
+      left: -38px;
+      width: 38px;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+#footer
+  .container
+    .bottom-nav
+      = link_to t("links.home"), root_path
+      = ' | '
+      = link_to t("links.feedback"), 'mailto:evopatina@gmail.com'
+      = ' | '
+      = link_to t("links.vk_group"), 'https://vk.com/evopatina'
+
+    .sign = t(".sign")
+
+= render '/layouts/google_analytics'

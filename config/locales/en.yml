@@ -1,0 +1,111 @@
+en:
+  sector:
+    id_1:
+      name: "body"
+      description: "Development of the physical body, health improvement, martial arts"
+    id_2:
+      name: "intellect"
+      description: "Development of intellectual abilities, erudition"
+    id_3:
+      name: "selection"
+      description: "Mental development, freedom from negative emotions and experience of enlightened perceptions"
+    id_4:
+      name: "wealth"
+      description: "Access to a variety of impressions and comfort, security, independence and the ability to give"
+    id_5:
+      name: "friends"
+      description: "Forming a circle of interesting, close friends"
+    id_6:
+      name: "experiences"
+      description: "Impressions, pleasure - sex, traveling, movies, books, music, chat, etc."
+    id_7:
+      name: "creation/research"
+      description: 'Creation or research of something new'
+    id_8:
+      name: "skills development"
+      description: 'Создание и поддержка навыков (например совершенствование своих умений в дайвинге, боксе, владения языками, науками и т.д. и т.п.)'
+
+
+  languages:
+    lang: "Language"
+    ru: "Russian"
+    en: "English"
+
+  links:
+    home: "Home"
+    patina: "Spectrum"
+    print: "Print"
+    statistics: Statistics
+    about: What is this?
+    instruction: How to?
+    feedback: Feedback
+    hello: Hello
+    vk_group: VK group
+
+  layouts:
+    navbar:
+      edit_profile: Edit profile
+      logout: Log out
+      login: Log in
+    footer:
+      sign: "Launched at 9 May 2015 by aytigra ©"
+
+  pages:
+    statistics:
+      fragments_by_sectors: Your number of fragments
+      sectors: MD
+      fragments: Fragmets
+      by_month: Past month
+      by_epoch: Past 100 days(14 weeks)
+      by_all: From beginning
+      total: Total
+      popular_sectors: Popular MDs
+      users_count: Users
+
+    statistics_sector:
+      fragments_by_sector: "Your number of fragments for in MD '%{sector}'"
+      activities: SD
+      fragments: Fragmets
+      by_month: Past month
+      by_epoch: Past 100 days(14 weeks)
+      by_all: From beginning
+      go_back: Go back
+
+  users:
+    email: E-mail
+    password: Password
+    password2: Repeat password
+    pass_length: (%{length} characters minimum)
+    shared:
+      links:
+        login: Sign in
+        signup: Sign up
+        forgot_pass: Forgot your password?
+        forgot_pass_send: Send me reset password instructions
+        miss_confirm_letter: Didn't receive confirmation instructions?
+        miss_unlock_letter: Didn't receive unlock instructions?
+        signin_omniauth: Sign in with %{provider}
+    sessions:
+      form:
+        remember: remember me
+    registrations:
+      edit:
+        title: Edit profile
+        pending_confirmation: "Currently waiting confirmation for: %{email}"
+        leave_blank: "|(leave blank if you don't want to change it)"
+        need_pass: "|(we need your current password to confirm your changes)"
+        update: Update
+        back: Back
+        delete: Delete account
+        delete_desc: This will delete account and all related data
+        delete_confirm: DANGER, will deete all your data
+    passwords:
+      edit:
+        title: Change your password
+        new_pass: New password
+        confirm_pass: Confirm new password
+        change: Change my password
+    confirmations:
+      new:
+        title: Resend confirmation instructions
+        send: Send

@@ -1,0 +1,121 @@
+
+<div id='patina-container'>
+</div>
+
+<style>
+  .node {
+    font: 11px sans-serif;
+  }
+  .node_1 {
+    font-size: 16px;
+  }
+  .node_2 {
+    font-size: 13px;
+  }
+
+  .link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+  }
+  .link_1 {
+    stroke-width: 4px;
+  }
+  .link_0 {
+    stroke-width: 5px;
+  }
+</style>
+
+
+<script type = "text/javascript">
+  var PATINA_JSON = <%= raw(render('/pages/patina.json', @json_locals)) %> ;
+
+  show_patina = function() {
+    var diameter = 1200;
+
+    var tree = d3.layout.tree()
+        .size([360, diameter / 2 - 150])
+        .separation(function(a, b) { return (a.parent == b.parent ? 1 : 2) / a.depth; });
+
+    var diagonal = d3.svg.diagonal.radial()
+        .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; });
+
+    var svg = d3.select("#patina-container").append("svg")
+        .attr("viewBox", "0 0 " + diameter + " " + diameter)
+      .append("g")
+        .attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
+
+
+    var nodes = tree.nodes(PATINA_JSON),
+        links = tree.links(nodes);
+
+    var link = svg.selectAll(".link")
+        .data(links)
+      .enter().append("path")
+        .attr("class", function(d) { return "link link_" + d.source.depth} )
+        .attr("d", function(d) {
+            if (d.source.depth == 0) d.source.x = d.target.x;
+            //d.target.y = round_to_ellipse(d.target);
+            //d.target.x = spread_to_width(d.target);
+            return diagonal(d);
+         })
+        .style("stroke", function(d) { return !d.target.color || d.target.color == '#ffffff' ? '#ccc' : d.target.color; });
+
+    var node = svg.selectAll(".node")
+        .data(nodes)
+      .enter().append("g")
+        .attr("class", function(d) { return "node node_" + d.depth} )
+        .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
+
+
+
+    node.append("text")
+        .attr("dy", function(d) { return d.depth == 3 ? -4 : -8 })
+        .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
+        .attr("transform", function(d) {
+          switch (d.depth) {
+            case 1:
+              translate = 80;
+              break;
+            case 2:
+              translate = 30;
+              break;
+            default:
+              translate = 10;
+          }
+          translate = d.x < 180 ? -translate : translate
+          return d.x < 180  ? "translate(" + translate + ")" : "rotate(180)translate(" + translate + ")";
+        })
+        .text(function(d) {
+          icon = d.icon ? d.icon : ''
+          return d.x < 180 ? icon + " " + d.name : d.name + " " + icon;
+        });
+
+
+    d3.select(self.frameElement).style("height", diameter + "px");
+
+    NProgress.done();
+  };
+
+  function round_to_ellipse(d) {
+    //return d.y - 15 * Math.pow(d.depth, 2) * Math.abs(1/Math.cos(((d.x+45)%90-45)/180*Math.PI));
+    return d.y - 20 * Math.pow(d.depth, 2) * Math.abs(Math.cos((d.x/180)*Math.PI))
+  }
+
+  function spread_to_width(d) {
+    var offset = 15 * Math.abs(Math.cos((d.x/180)*Math.PI))
+    offset = (d.x <= 90 || d.x > 180 && d.x <= 270) ? + offset : - offset;
+    return d.x + offset;
+  }
+
+  var js = document.createElement("script");
+  js.type = "text/javascript";
+  js.src = "//d3js.org/d3.v3.min.js";
+  js.onreadystatechange = function () {
+    if (this.readyState == 'complete') show_patina;
+  }
+  js.onload = show_patina;
+  document.body.appendChild(js);
+
+</script>
+

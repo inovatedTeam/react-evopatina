@@ -1,0 +1,32 @@
+.container
+  .row
+    h4.text-center = t('.fragments_by_sectors')
+    table.table.table-hover
+      tr
+        th = t('.sectors')
+        th = t('.by_month')
+        th = t('.by_epoch')
+        th = t('.by_all')
+      - @sectors.each do |sector|
+        tr
+          th = link_to sector.name, statistic_path(sector.id)
+          td = @fragments_month[sector.id].to_i
+          td = @fragments_epoch[sector.id].to_i
+          td = @fragments_total[sector.id].to_i
+
+      tr
+        th = t('.total')
+        td = @fragments_month.values.sum.to_i
+        td = @fragments_epoch.values.sum.to_i
+        td = @fragments_total.values.sum.to_i
+
+  .row
+    h4.text-center = t('.popular_sectors') + '(' + t("languages.#{I18n.locale}") + ')'
+    table.table.table-hover
+      tr
+        th = t('.sectors')
+        th = t('.users_count')
+      - @popular_sectors.each do |name, count|
+        tr
+          th = name
+          td = count
