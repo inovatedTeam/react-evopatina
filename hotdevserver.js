@@ -15,7 +15,7 @@ new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
   hot: true,
   contentBase: "/assets/",
-  proxy: {"*": 'http://localhost:3000'},
+  proxy: {"*": 'http://localhost:9000'},
   historyApiFallback: true,
   stats: { colors: true },
   //noInfo: true
